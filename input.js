@@ -18,7 +18,6 @@ const handleUserInput = (key) => {
     process.exit();
   }
 
-  // keys to move directions
   connection.write(keybindings[key]);
 };
 
