@@ -12,7 +12,7 @@ const connect = function () {
 
   // Let the user know they are connected
   conn.on("connect", () => {
-    console.log("Connected...");
+    console.log("Connected to game server.");
   });
 
   // Log data from server to the user
