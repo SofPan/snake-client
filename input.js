@@ -1,3 +1,4 @@
+const { keybindings } = require('./constants');
 let connection;
 // setup interface to handle user input from stdin
 
@@ -18,32 +19,7 @@ const handleUserInput = (key) => {
   }
 
   // keys to move directions
-  if (key === 'w') {
-    connection.write("Move: up");
-  }
-  if (key === "s") {
-    connection.write("Move: down");
-  }
-  if (key === "a") {
-    connection.write("Move: left");
-  }
-  if (key === "d") {
-    connection.write("Move: right");
-  }
-
-  // send messages to other users
-  if (key === "l") {
-    connection.write("Say: LOL");
-  }
-  if (key === "k") {
-    connection.write("Say: Keep away!");
-  }
-  if (key === "o") {
-    connection.write("Say: Oh no :/");
-  }
-  if (key === "u") {
-    connection.write("Say: UGH!");
-  }
+  connection.write(keybindings[key]);
 };
 
 
