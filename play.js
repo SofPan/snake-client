@@ -1,4 +1,5 @@
 const { connect } = require('./client');
+const stdin = process.stdin;
 
 // setup interface to handle user input from stdin
 
@@ -10,5 +11,14 @@ const setupInput = function () {
   return stdin;
 };
 
+const handleUserInput = (key) => {
+  if (key === "\u0003") {
+    process.exit();
+  }
+};
+
+stdin.on("data", handleUserInput);
+
 console.log("Connecting ...");
 connect();
+setupInput();
