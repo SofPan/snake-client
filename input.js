@@ -12,9 +12,12 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = (key) => {
-  if (key === "\u0003") {
+  // exit the program
+  if (key === "\u0003" || key === "q") {
     process.exit();
   }
+
+  // keys to move directions
   if (key === 'w') {
     connection.write("Move: up");
   }
@@ -26,6 +29,20 @@ const handleUserInput = (key) => {
   }
   if (key === "d") {
     connection.write("Move: right");
+  }
+
+  // send messages to other users
+  if (key === "l") {
+    connection.write("Say: LOL");
+  }
+  if (key === "k") {
+    connection.write("Say: Keep away!");
+  }
+  if (key === "o") {
+    connection.write("Say: Oh no :/");
+  }
+  if (key === "u") {
+    connection.write("Say: UGH!");
   }
 };
 
