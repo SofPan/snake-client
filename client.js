@@ -13,8 +13,8 @@ const connect = function () {
   // Let the user know they are connected
   conn.on("connect", () => {
     console.log("Connected to game server.");
+    // send user initials to the server
     conn.write("Name: SGP");
-    conn.write("Move: up");
   });
 
   // Log data from server to the user
