@@ -14,6 +14,7 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Connected to game server.");
     conn.write("Name: SGP");
+    conn.write("Move: up");
   });
 
   // Log data from server to the user
