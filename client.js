@@ -15,6 +15,15 @@ const connect = () => {
   // Let the user know they are connected
   conn.on("connect", () => {
     console.log("Connected to game server.");
+    console.log(`
+    **********
+    Welcome to Sneaky Snakes!
+      - W, A, S, D are your directional keys (Up, Left, Down Right)
+      - L, K, O, or U to send messages
+      - Q or Ctrl + C to quit the game
+    And remember to have fun :)
+    **********
+    `);
     getName(conn);
   });
 
