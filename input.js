@@ -12,6 +12,7 @@ const setupInput = (conn) => {
   return stdin;
 };
 
+// On certain keypresses, exit game, move snake, or send message
 const handleUserInput = (key) => {
   // exit the program
   if (key === "\u0003" || key === "q") {
