@@ -17,8 +17,10 @@ const handleUserInput = (key) => {
   if (key === "\u0003" || key === "q") {
     process.exit();
   }
-
-  connection.write(keybindings[key]);
+  // only write bound keys to connection object to avoid crashes on wrong keypress
+  if (keybindings[key]) {
+    connection.write(keybindings[key]);
+  }
 };
 
 

@@ -1,7 +1,15 @@
 const net = require("net");
 const { IP, PORT } = require("./constants");
+
+const getName = () => {
+  console.log("Enter your initials (max 3 characters)");
+  let name = process.stdin;
+  return new Promise((resolve) => {
+    resolve(name);
+  });
+};
 // establishes a connection with the game server
-const connect = function () {
+const connect = () => {
   const conn = net.createConnection({
     host: IP,
     port: PORT,
@@ -13,8 +21,10 @@ const connect = function () {
   // Let the user know they are connected
   conn.on("connect", () => {
     console.log("Connected to game server.");
+    getName()
+      .then((name) => conn.write(`Name: ${name}`));
     // send user initials to the server
-    conn.write("Name: SGP");
+
   });
 
   // Log data from server to the user
