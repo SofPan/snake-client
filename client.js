@@ -1,13 +1,6 @@
 const net = require("net");
-const prompt = require('prompt-sync')();
-
 const { IP, PORT } = require("./constants");
-
-const getName = (connection) => {
-  const name = prompt('Enter your initials (max 3 characters)');
-  connection.write(`Name: ${name}`);
-};
-
+const { getName } = require("./util");
 
 // establishes a connection with the game server
 const connect = () => {
