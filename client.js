@@ -15,6 +15,7 @@ const connect = () => {
   // Let the user know they are connected
   conn.on("connect", () => {
     console.log("Connected to game server.");
+    // Show users instructions on connect
     console.log(`
     **********
     Welcome to Sneaky Snakes!
@@ -24,6 +25,7 @@ const connect = () => {
     And remember to have fun :)
     **********
     `);
+    // Prompt user to enter their name
     getName(conn);
   });
 

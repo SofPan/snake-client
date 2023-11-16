@@ -4,6 +4,7 @@ const prompt = require('prompt-sync')();
 const getName = (connection) => {
   const name = prompt('Enter your initials ');
   connection.write(`Name: ${name}`);
+  return;
 };
 
 module.exports = { getName };
