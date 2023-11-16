@@ -2,7 +2,7 @@ const { keybindings } = require('./constants');
 let connection;
 
 // setup interface to handle user input from stdin
-const setupInput = function (conn) {
+const setupInput = (conn) => {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
